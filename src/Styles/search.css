@@ -1,0 +1,126 @@
+.header-search input {
+  padding: 2px 40px 5px 15px;
+  border-radius: 10px 0 10px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.header-search {
+  position: relative;
+}
+
+.hero-search {
+  position: absolute;
+  margin: auto;
+}
+
+.hero-search input {
+  position: relative;
+  padding: 12px 40px;
+  border-radius: 50px 0 50px 0;
+  outline: none;
+  z-index: 10;
+  width: calc(100vw - 50px);
+  max-width: 1000px;
+  border: none;
+}
+
+.form-search-submit {
+  position: absolute;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: #000;
+}
+
+.header-search .form-search-submit {
+  top: 0px;
+  right: 12px;
+}
+
+.hero-search .form-search-submit {
+  top: 8px;
+  right: 30px;
+  z-index: 10;
+}
+
+.search-list {
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 30vh;
+  max-height: 300px;
+  z-index: 10;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; */
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0px 10px 10px;
+  color: #000;
+  overflow-x: hidden;
+}
+
+.search-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.search-list a {
+  color: #000;
+  text-decoration: none;
+  width: 100%;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  border-bottom: 0.2px solid rgba(0,0,0,0.2);
+}
+
+.search-list a:hover, .search-list a:active {
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+}
+
+.hero-search input.border {
+  animation: border 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes border {
+  0% {
+    border-radius: 50px 0 50px 0;
+  }
+  50% {
+    border-radius: 50px 25px 25px 0;
+  }
+  100% {
+    border-radius: 50px 50px 0 0;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .hero-search input {
+    width: calc(100vw - 150px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-search input {
+    width: calc(100vw - 200px);
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  .header-search input {
+    margin-left: 15px;
+    width: auto;
+  }
+
+  .header-search {
+    align-self: center;
+  }
+  
+  .hero-search input {
+    width: calc(90vw - 300px);
+  }
+}
