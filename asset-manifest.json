@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Chef-Palace/static/css/main.5664f04c.css",
+    "main.js": "/Chef-Palace/static/js/main.94727893.js",
+    "index.html": "/Chef-Palace/index.html",
+    "main.5664f04c.css.map": "/Chef-Palace/static/css/main.5664f04c.css.map",
+    "main.94727893.js.map": "/Chef-Palace/static/js/main.94727893.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5664f04c.css",
+    "static/js/main.94727893.js"
+  ]
+}
