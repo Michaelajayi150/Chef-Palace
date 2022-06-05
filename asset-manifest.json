@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Chef-Palace/static/css/main.5664f04c.css",
-    "main.js": "/Chef-Palace/static/js/main.8f4fc1ed.js",
+    "main.js": "/Chef-Palace/static/js/main.f02f1376.js",
     "index.html": "/Chef-Palace/index.html",
     "main.5664f04c.css.map": "/Chef-Palace/static/css/main.5664f04c.css.map",
-    "main.8f4fc1ed.js.map": "/Chef-Palace/static/js/main.8f4fc1ed.js.map"
+    "main.f02f1376.js.map": "/Chef-Palace/static/js/main.f02f1376.js.map"
   },
   "entrypoints": [
     "static/css/main.5664f04c.css",
-    "static/js/main.8f4fc1ed.js"
+    "static/js/main.f02f1376.js"
   ]
 }
