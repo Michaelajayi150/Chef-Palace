@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Chef-Palace/static/css/main.5664f04c.css",
-    "main.js": "/Chef-Palace/static/js/main.88e911cb.js",
+    "main.css": "/Chef-Palace/static/css/main.2a9c45c4.css",
+    "main.js": "/Chef-Palace/static/js/main.5e74916b.js",
     "index.html": "/Chef-Palace/index.html",
-    "main.5664f04c.css.map": "/Chef-Palace/static/css/main.5664f04c.css.map",
-    "main.88e911cb.js.map": "/Chef-Palace/static/js/main.88e911cb.js.map"
+    "main.2a9c45c4.css.map": "/Chef-Palace/static/css/main.2a9c45c4.css.map",
+    "main.5e74916b.js.map": "/Chef-Palace/static/js/main.5e74916b.js.map"
   },
   "entrypoints": [
-    "static/css/main.5664f04c.css",
-    "static/js/main.88e911cb.js"
+    "static/css/main.2a9c45c4.css",
+    "static/js/main.5e74916b.js"
   ]
 }
