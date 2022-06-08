@@ -17,7 +17,8 @@ function Search({ classType }) {
     if (input === "") {
       inputTab.current.focus();
     } else {
-      navigate("/searched/" + input);
+      navigate("/Chef-Palace/searched/" + input);
+      setInput("");
     }
   };
 
@@ -61,7 +62,7 @@ function Search({ classType }) {
             return (
               <Link
                 to={
-                  "/recipe/" +
+                  "/Chef-Palace/recipe/" +
                   listItem.recipe.uri.substr(listItem.recipe.uri.length - 32)
                 }
                 key={index}

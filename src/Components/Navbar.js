@@ -29,7 +29,10 @@ function HeroNavbar() {
         variant="dark"
       >
         <Container>
-          <Link className="navbar-brand" to={{ pathname: "/", hash: "" }}>
+          <Link
+            className="navbar-brand"
+            to={{ pathname: "/Chef-Palace", hash: "" }}
+          >
             <h1>
               {/* <SiIcons.SiChef size="3rem" /> */}
               CHEF P{" "}

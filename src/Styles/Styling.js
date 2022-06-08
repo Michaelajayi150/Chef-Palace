@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Card = styled.div`
@@ -50,17 +51,63 @@ export const Grid = styled.div`
 
 export const List = styled.div`
   position: relative;
-  width: 40%;
-  max-width: 400px;
+  /* width: calc(50% - 600px); */
   margin: 6px auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
-  transform: translateY(-30px);
-  background-color: #fff;
+  transform: translateY(-60px);
+  /* background-color: #fff; */
   z-index: 10;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border-radius: 10px;
-  box-shadow: 2px 4px 18px 20px rgb(0, 0, 0, 0.4);
+  /* box-shadow: 2px 4px 18px 20px rgb(0, 0, 0, 0.4); */
+`;
+
+export const SLink = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  background: linear-gradient(35deg, #494949, #313131);
+  width: 90px;
+  height: 90px;
+  /* padding: 15px 15px; */
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  cursor: pointer;
+  transform: scale(0.8);
+
+  h4 {
+    color: #fff;
+    font-size: 0.8rem;
+  }
+
+  svg {
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  &.active {
+    background: linear-gradient(to right, #f27121, #e94057);
+  }
+
+  @media only screen and (min-width: 540px) {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    h4 {
+      color: #fff;
+      font-size: 0.8rem;
+    }
+
+    svg {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+  }
 `;

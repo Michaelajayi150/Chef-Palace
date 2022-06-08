@@ -12,10 +12,10 @@ function Pages() {
       <Hero />
       <Category />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cuisine/:type" element={<Cuisine />} />
-        <Route path="/searched/:search" element={<Searched />} />
-        <Route path="/recipe/:name" element={<Recipe />} />
+        <Route exact path="/Chef-Palace" element={<Home />} />
+        <Route path="/Chef-Palace/cuisine/:type" element={<Cuisine />} />
+        <Route path="/Chef-Palace/searched/:search" element={<Searched />} />
+        <Route path="/Chef-Palace/recipe/:name" element={<Recipe />} />
       </Routes>
     </BrowserRouter>
   );

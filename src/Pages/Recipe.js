@@ -10,11 +10,13 @@ import {
   NutDetail,
   Nutrients,
   RecipeContainer,
+  RecipeShare,
   Series,
+  Stats,
 } from "../Styles/RecipeStyle";
 
 function Recipe() {
-  const [details, setDetails] = useState({});
+  const [details, setDetails] = useState([]);
   const [similar, setSimilar] = useState([]);
   const [ing, setIngredients] = useState([]);
   const [nut, setNutrients] = useState([]);
@@ -27,7 +29,7 @@ function Recipe() {
   const getRecipe = async (name) => {
     let appID = "23b20659";
     const data = await fetch(
-      `/api/recipes/v2/${name}?type=public&app_id=${appID}&app_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.edamam.com/api/recipes/v2/${name}?type=public&app_id=${appID}&app_key=${process.env.REACT_APP_API_KEY}`
     );
     const recipe = await data.json();
     setDetails(recipe.recipe);
@@ -39,7 +41,7 @@ function Recipe() {
     setIngredients(Ingredients);
 
     //Get Recipe Nutrients
-    const Nutrients = recipe.recipe.digest.map((item, index) => {
+    const Nutrients = recipe.recipe.digest.map((item) => {
       return item;
     });
     setNutrients(Nutrients);
@@ -56,6 +58,8 @@ function Recipe() {
     setSimilar(selected);
   };
 
+  console.log(details);
+
   const convertTime = (time) => {
     var Hours =
       Math.trunc(time / 60) >= 2
@@ -71,26 +75,62 @@ function Recipe() {
 
   return (
     <Container>
-      <Link to={"/searched/" + details.label} className="text-decoration-none">
-        <h2 className="text-uppercase">Recipe/{details.dishType}</h2>
+      <Link
+        to={"/Chef-Palace/searched/" + details.label}
+        className="text-decoration-none"
+      >
+        <h2 className="text-uppercase text-wrap">
+          Recipe/
+          {Object.values(`${details.dishType}`).map((item) => item)}
+        </h2>
       </Link>
       <RecipeContainer>
         <Mains>
           <h1>{details.label}</h1>
-          <img src={details.image} alt={details.label} width="100%" />
-          <button>
-            <BsIcons.BsHeartFill size="2rem" />
-            <h4>Add to Favourites</h4>
-          </button>
-
-          {/* Recipe Stats */}
-          <div className="stats">
-            <div className="recipe-time">
-              Ready In: {convertTime(details.totalTime)}
+          <Stats>
+            <img src={details.image} alt={details.label} />
+            <div className="description">
+              <h3>Description</h3>
+              <p>
+                {details.label} is a{" "}
+                {Object.values(`${details.dietLabels}`).map((item) => item)}{" "}
+                <span className="text-capitalize">{details.cuisineType}</span>{" "}
+                dish and can be made for those who needs or are{" "}
+                {Object.values(`${details.healthLabels}`).map((item) => item)}{" "}
+                {details.caution === {}
+                  ? "."
+                  : `and be cautioned of ${details.cautions}`}
+                {/* Recipe Stats */}
+                <div className="recipe-timing">
+                  <b>
+                    Ready In:{" "}
+                    <span className="text-nowrap">
+                      {convertTime(details.totalTime)}
+                    </span>
+                  </b>
+                  <b>
+                    Meal Type:{" "}
+                    <span className="text-nowrap">{details.mealType}</span>
+                  </b>
+                  <b>Serves: {details.yield}</b>
+                </div>
+                <RecipeShare>
+                  <a href="paol">
+                    <BsIcons.BsHeartFill size="1.4rem" />
+                  </a>
+                  <a href="paol">
+                    <BsIcons.BsFacebook size="1.4rem" />
+                  </a>
+                  <a href="paol">
+                    <BsIcons.BsWhatsapp size="1.4rem" />
+                  </a>
+                  <a href="paol">
+                    <BsIcons.BsTwitter size="1.4rem" />
+                  </a>
+                </RecipeShare>
+              </p>
             </div>
-            <div className="recipe-type">Meal Type: {details.mealType}</div>
-            <div className="recipe-serve">Serves: {details.yield}</div>
-          </div>
+          </Stats>
 
           {/* Ingredients, Nutrients and Instruction Series */}
           <Series>
@@ -98,6 +138,15 @@ function Recipe() {
               <h3>{ing.length} Ingredients</h3>
               {ing}
               <h3>Instructions</h3>
+              <p>Click on the button below to see recipe direction</p>
+              <button>
+                <a href={details.url} target="_blank" rel="noreferrer">
+                  Check Direction
+                </a>
+              </button>
+              <p>
+                Credit to: <a href={details.url}>{details.source}</a>
+              </p>
             </ItemsRules>
             <Nutrients>
               <h3>Nutrition</h3>
@@ -154,15 +203,11 @@ function Recipe() {
               <div key={index}>
                 <Link
                   to={
-                    "/recipe/" +
+                    "/Chef-Palace/recipe/" +
                     item.recipe.uri.substr(item.recipe.uri.length - 32)
                   }
                 >
-                  <img
-                    src={item.recipe.image}
-                    alt={item.recipe.label}
-                    width="100%"
-                  />
+                  <img src={item.recipe.image} alt={item.recipe.label} />
                   <p>{item.recipe.label}</p>
                 </Link>
               </div>

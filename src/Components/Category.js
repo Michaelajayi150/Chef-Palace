@@ -1,27 +1,26 @@
 import * as FaIcons from "react-icons/fa";
 import * as GiIcons from "react-icons/gi";
-import { NavLink } from "react-router-dom";
-import { List } from "../Styles/Styling";
+import { List, SLink } from "../Styles/Styling";
 
 function Category() {
   return (
     <List>
-      <NavLink to="/cuisine/Italian">
+      <SLink to="/Chef-Palace/cuisine/Italian">
         <FaIcons.FaPizzaSlice />
-        <p>Italian</p>
-      </NavLink>
-      <NavLink to="/cuisine/Spanish">
+        <h4>Italian</h4>
+      </SLink>
+      <SLink to="/Chef-Palace/cuisine/French">
         <GiIcons.GiChopsticks />
-        <p>Spanish</p>
-      </NavLink>
-      <NavLink to="/cuisine/American">
+        <h4>French</h4>
+      </SLink>
+      <SLink to="/Chef-Palace/cuisine/American">
         <FaIcons.FaHamburger />
-        <p>American</p>
-      </NavLink>
-      <NavLink to="/cuisine/African">
+        <h4>American</h4>
+      </SLink>
+      <SLink to="/Chef-Palace/cuisine/Asian">
         <GiIcons.GiBowlOfRice />
-        <p>African</p>
-      </NavLink>
+        <h4>Asian</h4>
+      </SLink>
     </List>
   );
 }

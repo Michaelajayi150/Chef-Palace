@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Card, Gradient, Grid } from "../Styles/Styling";
 
 function Cuisine() {
@@ -8,11 +8,13 @@ function Cuisine() {
   let params = useParams();
 
   const getCuisine = async (name) => {
+    let appID = "23b20659";
+
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=9`
+      `https://api.edamam.com/api/recipes/v2?type=public&q=salad&q=bread&app_id=${appID}&app_key=${process.env.REACT_APP_API_KEY}&cuisineType=${name}&random=true`
     );
     const recipes = await data.json();
-    setCuisine(recipes.results);
+    setCuisine(recipes.hits);
   };
 
   useEffect(() => {
@@ -23,12 +25,19 @@ function Cuisine() {
     <Container>
       <h2> {params.type} Recipes </h2>
       <Grid>
-        {cuisine.map((recipe) => {
+        {cuisine.map((item, index) => {
           return (
-            <Card key={recipe.id}>
-              <img src={recipe.image} alt={recipe.title} />
-              <p>{recipe.title}</p>
-              <Gradient />
+            <Card key={index}>
+              <Link
+                to={
+                  "/Chef-Palace/recipe/" +
+                  item.recipe.uri.substr(item.recipe.uri.length - 32)
+                }
+              >
+                <img src={item.recipe.image} alt={item.recipe.label} />
+                <p>{item.recipe.label}</p>
+                <Gradient />
+              </Link>
             </Card>
           );
         })}

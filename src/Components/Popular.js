@@ -30,41 +30,50 @@ function Popular() {
   };
 
   return (
-    <div>
-      <Container>
-        <h2> Popular Recipes </h2>
+    <Container className="mt-5">
+      <h2> Popular Recipes </h2>
 
-        {/* Slide Container */}
-        <Splide
-          options={{
-            perPage: 4,
-            arrows: false,
-            pagination: false,
-            drag: "free",
-            gap: "1rem",
-          }}
-        >
-          {Popular.map((item, index) => {
-            return (
-              <SplideSlide key={index}>
-                <Card>
-                  <Link
-                    to={
-                      "/recipe/" +
-                      item.recipe.uri.substr(item.recipe.uri.length - 32)
-                    }
-                  >
-                    <img src={item.recipe.image} alt={item.recipe.label} />
-                    <p>{item.recipe.label}</p>
-                    <Gradient />
-                  </Link>
-                </Card>
-              </SplideSlide>
-            );
-          })}
-        </Splide>
-      </Container>
-    </div>
+      {/* Slide Container */}
+      <Splide
+        options={{
+          perPage: 4,
+          breakpoints: {
+            998: {
+              perPage: 3,
+            },
+            768: {
+              perPage: 2,
+            },
+            546: {
+              perPage: 1,
+            },
+          },
+          arrows: false,
+          pagination: false,
+          drag: "free",
+          gap: "1rem",
+        }}
+      >
+        {Popular.map((item, index) => {
+          return (
+            <SplideSlide key={index} className="mt-3">
+              <Card>
+                <Link
+                  to={
+                    "/Chef-Palace/recipe/" +
+                    item.recipe.uri.substr(item.recipe.uri.length - 32)
+                  }
+                >
+                  <img src={item.recipe.image} alt={item.recipe.label} />
+                  <p>{item.recipe.label}</p>
+                  <Gradient />
+                </Link>
+              </Card>
+            </SplideSlide>
+          );
+        })}
+      </Splide>
+    </Container>
   );
 }
 

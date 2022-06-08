@@ -70,3 +70,17 @@ code {
 
 
 /* Recipe Page */
+.recipe-timing {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr;
+  text-transform: capitalize;
+  text-align: center;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  margin-top: 5px;
+}
+
+.recipe-timing b:nth-child(2) {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}

@@ -11,7 +11,7 @@ function Searched() {
     let appId = "23b20659";
 
     const data = await fetch(
-      `/api/recipes/v2?type=public&q=${name}&app_id=${appId}&app_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.edamam.com/api/recipes/v2?type=public&q=${name}&app_id=${appId}&app_key=${process.env.REACT_APP_API_KEY}`
     );
     const recipes = await data.json();
     setSearch(recipes.hits);
