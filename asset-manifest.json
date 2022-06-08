@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/Chef-Palace/static/css/main.2a9c45c4.css",
-    "main.js": "/Chef-Palace/static/js/main.5e74916b.js",
+    "main.css": "/Chef-Palace/static/css/main.4dc3ba0a.css",
+    "main.js": "/Chef-Palace/static/js/main.5594bd50.js",
+    "static/media/Home-3.jpg": "/Chef-Palace/static/media/Home-3.733fb395e471c892d71b.jpg",
+    "static/media/Home-5.jpg": "/Chef-Palace/static/media/Home-5.d647c2f84edbaef5245b.jpg",
+    "static/media/Home-2.jpg": "/Chef-Palace/static/media/Home-2.6ef6db913df93a631506.jpg",
+    "static/media/Home-4.jpg": "/Chef-Palace/static/media/Home-4.f7506bae6d36fa2721e2.jpg",
+    "static/media/Home.jpg": "/Chef-Palace/static/media/Home.3887db3ba88c132b5b6c.jpg",
     "index.html": "/Chef-Palace/index.html",
-    "main.2a9c45c4.css.map": "/Chef-Palace/static/css/main.2a9c45c4.css.map",
-    "main.5e74916b.js.map": "/Chef-Palace/static/js/main.5e74916b.js.map"
+    "main.4dc3ba0a.css.map": "/Chef-Palace/static/css/main.4dc3ba0a.css.map",
+    "main.5594bd50.js.map": "/Chef-Palace/static/js/main.5594bd50.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a9c45c4.css",
-    "static/js/main.5e74916b.js"
+    "static/css/main.4dc3ba0a.css",
+    "static/js/main.5594bd50.js"
   ]
 }
