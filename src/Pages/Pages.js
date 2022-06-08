@@ -5,18 +5,20 @@ import Cuisine from "./Cuisine";
 import Home from "./Home";
 import Recipe from "./Recipe";
 import Searched from "./Searched";
+import Footer from "../Components/Footer";
 
 function Pages() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Chef-Palace">
       <Hero />
       <Category />
       <Routes>
-        <Route exact path="/Chef-Palace" element={<Home />} />
-        <Route path="/Chef-Palace/cuisine/:type" element={<Cuisine />} />
-        <Route path="/Chef-Palace/searched/:search" element={<Searched />} />
-        <Route path="/Chef-Palace/recipe/:name" element={<Recipe />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/cuisine/:type" element={<Cuisine />} />
+        <Route path="/searched/:search" element={<Searched />} />
+        <Route path="/recipe/:name" element={<Recipe />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

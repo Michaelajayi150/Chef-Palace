@@ -84,3 +84,19 @@ code {
   border-left: 1px solid;
   border-right: 1px solid;
 }
+
+.recipe-class {
+  cursor: default;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-transform: capitalize;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  color: #000;
+}
+
+.recipe-class b:first-child {
+  border-right: 1px solid rgba(153, 153, 153, 0.5);
+}

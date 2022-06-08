@@ -62,7 +62,7 @@ function Search({ classType }) {
             return (
               <Link
                 to={
-                  "/Chef-Palace/recipe/" +
+                  "/recipe/" +
                   listItem.recipe.uri.substr(listItem.recipe.uri.length - 32)
                 }
                 key={index}

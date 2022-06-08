@@ -5,8 +5,9 @@ export const RecipeContainer = styled.div`
   margin: auto;
 
   @media only screen and (min-width: 998px) {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 30px;
     margin: auto;
   }
 `;
@@ -34,19 +35,11 @@ export const Mains = styled.div`
     padding: 15px;
     color: #fff;
   }
-
-  @media only screen and (min-width: 998px) {
-    width: 68%;
-  }
 `;
 
 export const Aside = styled.div`
   width: 100%;
   justify-content: flex-end;
-
-  @media only screen and (min-width: 998px) {
-    width: 28%;
-  }
 `;
 
 export const Series = styled.div`
@@ -124,5 +117,37 @@ export const RecipeShare = styled.div`
 
   a {
     margin-right: 1rem;
+  }
+`;
+
+//Side Cards
+export const SideCard = styled.div`
+  min-width: 250px;
+  min-height: 15rem;
+  margin: 20px 0 40px;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  a {
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+    }
   }
 `;

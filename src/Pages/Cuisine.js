@@ -30,7 +30,7 @@ function Cuisine() {
             <Card key={index}>
               <Link
                 to={
-                  "/Chef-Palace/recipe/" +
+                  "/recipe/" +
                   item.recipe.uri.substr(item.recipe.uri.length - 32)
                 }
               >

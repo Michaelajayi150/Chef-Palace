@@ -29,13 +29,10 @@ function HeroNavbar() {
         variant="dark"
       >
         <Container>
-          <Link
-            className="navbar-brand"
-            to={{ pathname: "/Chef-Palace", hash: "" }}
-          >
+          <Link className="navbar-brand" to={{ pathname: "/", hash: "" }}>
             <h1>
               {/* <SiIcons.SiChef size="3rem" /> */}
-              CHEF P{" "}
+              CHEF P
               <GiIcons.GiKnifeFork style={{ transform: "translateY(2.5px)" }} />
               LACE
             </h1>
@@ -59,14 +56,14 @@ function HeroNavbar() {
                 className="nav-link"
                 to={{ pathname: "/" }}
               >
-                Recipes
+                All Categories
               </Link>
               <Link
                 onClick={toggle}
                 className="nav-link"
                 to={{ pathname: "/" }}
               >
-                Popular
+                About Us
               </Link>
               <Link
                 onClick={toggle}

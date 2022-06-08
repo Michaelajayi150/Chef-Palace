@@ -14,6 +14,7 @@ import {
   Series,
   Stats,
 } from "../Styles/RecipeStyle";
+import RecipeSide from "../Components/RecipeSide";
 
 function Recipe() {
   const [details, setDetails] = useState([]);
@@ -58,8 +59,6 @@ function Recipe() {
     setSimilar(selected);
   };
 
-  console.log(details);
-
   const convertTime = (time) => {
     var Hours =
       Math.trunc(time / 60) >= 2
@@ -75,10 +74,7 @@ function Recipe() {
 
   return (
     <Container>
-      <Link
-        to={"/Chef-Palace/searched/" + details.label}
-        className="text-decoration-none"
-      >
+      <Link to={"/searched/" + details.label} className="text-decoration-none">
         <h2 className="text-uppercase text-wrap">
           Recipe/
           {Object.values(`${details.dishType}`).map((item) => item)}
@@ -197,22 +193,7 @@ function Recipe() {
           </Series>
         </Mains>
         <Aside>
-          <h4>ALSO SEE:</h4>
-          {similar.map((item, index) => {
-            return (
-              <div key={index}>
-                <Link
-                  to={
-                    "/Chef-Palace/recipe/" +
-                    item.recipe.uri.substr(item.recipe.uri.length - 32)
-                  }
-                >
-                  <img src={item.recipe.image} alt={item.recipe.label} />
-                  <p>{item.recipe.label}</p>
-                </Link>
-              </div>
-            );
-          })}
+          <RecipeSide similar={similar} />
         </Aside>
       </RecipeContainer>
     </Container>

@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import HeroNavbar from "./Navbar";
+import Bg from "../asset/Home.jpg";
+import Bg2 from "../asset/Home-2.jpg";
+import Bg3 from "../asset/Home-3.jpg";
+import Bg4 from "../asset/Home-4.jpg";
+import Bg5 from "../asset/Home-5.jpg";
 import Search from "./Search";
 import {
   HeroImage,
@@ -18,24 +23,21 @@ function Hero() {
   const length = background.length;
   const timeout = useRef(null);
 
-  const getBackground = async () => {
+  const getBackground = () => {
     const check = localStorage.getItem("Background");
 
     if (check) {
       setBackground(JSON.parse(check));
     } else {
-      let appID = "23b20659";
-
-      const api = await fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=${appID}&app_key=${process.env.REACT_APP_API_KEY}&random=true`
-      );
-      const data = await api.json();
-      const randomPick = data.hits.sort(() => Math.random() - 0.5);
-      const selected = randomPick.slice(0, 4);
-
-      localStorage.setItem("Background", JSON.stringify(selected));
-
-      setBackground(selected);
+      const BgArray = [
+        { image: Bg, label: "Home Page" },
+        { image: Bg2, label: "Home Page 2" },
+        { image: Bg3, label: "Home Page 3" },
+        { image: Bg4, label: "Home Page 4" },
+        { image: Bg5, label: "Home Page 5" },
+      ];
+      localStorage.setItem("Background", JSON.stringify(BgArray));
+      setBackground(BgArray);
     }
   };
 
@@ -83,10 +85,7 @@ function Hero() {
             <HeroSlide key={index}>
               {index === current && (
                 <HeroSlider>
-                  <HeroImage
-                    src={slide.recipe.image}
-                    alt={slide.recipe.label}
-                  />
+                  <HeroImage src={slide.image} alt={slide.label} />
                 </HeroSlider>
               )}
             </HeroSlide>
