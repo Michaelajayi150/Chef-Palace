@@ -18,32 +18,18 @@ import {
 } from "../Styles/HeroStyle";
 
 function Hero() {
-  const [background, setBackground] = useState([]);
+  const background = [
+    { image: Bg, label: "Home Page" },
+    { image: Bg2, label: "Home Page 2" },
+    { image: Bg3, label: "Home Page 3" },
+    { image: Bg4, label: "Home page 4" },
+    { image: Bg5, label: "Home Page 5" },
+  ];
   const [current, setCurrent] = useState(0);
   const length = background.length;
   const timeout = useRef(null);
 
-  const getBackground = () => {
-    const check = localStorage.getItem("Background");
-
-    if (check) {
-      setBackground(JSON.parse(check));
-    } else {
-      const BgArray = [
-        { image: Bg, label: "Home Page" },
-        { image: Bg2, label: "Home Page 2" },
-        { image: Bg3, label: "Home Page 3" },
-        { image: Bg4, label: "Home Page 4" },
-        { image: Bg5, label: "Home Page 5" },
-      ];
-      localStorage.setItem("Background", JSON.stringify(BgArray));
-      setBackground(BgArray);
-    }
-  };
-
   useEffect(() => {
-    getBackground();
-
     const nextSlide = () => {
       setCurrent((current) => (current === length - 1 ? 0 : current + 1));
     };

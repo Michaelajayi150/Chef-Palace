@@ -18,6 +18,10 @@ export const FooterContainer = styled.div`
   h1 {
     display: inline-flex;
   }
+
+  .container {
+    top: 0;
+  }
 `;
 
 export const GoTop = styled.div`
@@ -32,6 +36,7 @@ export const GoTop = styled.div`
   text-align: center;
   background-color: #0d6efd;
   border-radius: 50%;
+  cursor: pointer;
 `;
 
 export const FooterShare = styled.div`

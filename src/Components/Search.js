@@ -17,9 +17,15 @@ function Search({ classType }) {
     if (input === "") {
       inputTab.current.focus();
     } else {
-      navigate("/Chef-Palace/searched/" + input);
-      setInput("");
+      navigate("/searched/" + input);
+      listOff();
     }
+  };
+
+  const listOff = () => {
+    setTimeout(() => {
+      setInput("");
+    }, 1000);
   };
 
   const getList = async (input) => {
@@ -66,6 +72,7 @@ function Search({ classType }) {
                   listItem.recipe.uri.substr(listItem.recipe.uri.length - 32)
                 }
                 key={index}
+                onClick={listOff}
               >
                 {listItem.recipe.label}
               </Link>

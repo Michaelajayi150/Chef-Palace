@@ -6,10 +6,12 @@ import Home from "./Home";
 import Recipe from "./Recipe";
 import Searched from "./Searched";
 import Footer from "../Components/Footer";
+import ScrollTop from "../Components/ScrollTop";
 
 function Pages() {
   return (
     <BrowserRouter basename="/Chef-Palace">
+      <ScrollTop />
       <Hero />
       <Category />
       <Routes>

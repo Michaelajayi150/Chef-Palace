@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import {
   Aside,
@@ -22,6 +22,7 @@ function Recipe() {
   const [ing, setIngredients] = useState([]);
   const [nut, setNutrients] = useState([]);
   let params = useParams();
+  let recipeLocation = useLocation();
 
   useEffect(() => {
     getRecipe(params.name);
@@ -72,6 +73,8 @@ function Recipe() {
     return `${Hours} ${Min}`;
   };
 
+  console.log(recipeLocation);
+
   return (
     <Container>
       <Link to={"/searched/" + details.label} className="text-decoration-none">
@@ -114,13 +117,26 @@ function Recipe() {
                   <a href="paol">
                     <BsIcons.BsHeartFill size="1.4rem" />
                   </a>
-                  <a href="paol">
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=https://michaelajayi150.github.io/Chef-Palace/${recipeLocation.pathname}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <BsIcons.BsFacebook size="1.4rem" />
                   </a>
-                  <a href="paol">
+                  <a
+                    href={`whatsapp://send?text=Check%20out%20how%20to%20make%20${details.label}`}
+                    data-action="share/whatsapp/share"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <BsIcons.BsWhatsapp size="1.4rem" />
                   </a>
-                  <a href="paol">
+                  <a
+                    href={`https://twitter.com/share?url=https://michaelajayi150.github.io/Chef-Palace/${recipeLocation.pathname}&text=Check%20out%20how%20to%20make%20${details.label}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <BsIcons.BsTwitter size="1.4rem" />
                   </a>
                 </RecipeShare>

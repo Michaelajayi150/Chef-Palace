@@ -18,10 +18,19 @@ code {
     monospace;
 }
 
+.container {
+  position: relative;
+  top: -4rem;
+}
+
 .header {
   position: absolute !important;
   width: 100%;
   z-index: 100;
+}
+
+.header .container {
+  top: 0;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -99,4 +108,8 @@ code {
 
 .recipe-class b:first-child {
   border-right: 1px solid rgba(153, 153, 153, 0.5);
+}
+
+.pointer {
+  cursor: pointer;
 }

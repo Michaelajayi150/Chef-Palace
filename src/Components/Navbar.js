@@ -54,9 +54,9 @@ function HeroNavbar() {
               <Link
                 onClick={toggle}
                 className="nav-link"
-                to={{ pathname: "/" }}
+                to={{ pathname: "/searched/chicken" }}
               >
-                All Categories
+                Recipes
               </Link>
               <Link
                 onClick={toggle}
