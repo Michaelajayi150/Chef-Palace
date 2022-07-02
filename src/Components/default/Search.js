@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "../Styles/search.css";
+import "../../Styles/search.css";
 import { Link, useNavigate } from "react-router-dom";
 import * as GiIcons from "react-icons/gi";
 import * as BsIcons from "react-icons/bs";

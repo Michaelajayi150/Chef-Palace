@@ -1,6 +1,6 @@
 import * as FaIcons from "react-icons/fa";
 import * as GiIcons from "react-icons/gi";
-import { List, SLink } from "../Styles/Styling";
+import { List, SLink } from "../../Styles/Styling";
 
 function Category() {
   return (

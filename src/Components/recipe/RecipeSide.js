@@ -1,6 +1,6 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Link } from "react-router-dom";
-import { SideCard } from "../Styles/RecipeStyle";
+import { SideCard } from "../../Styles/RecipeStyle";
 
 function RecipeSide({ similar }) {
   return (

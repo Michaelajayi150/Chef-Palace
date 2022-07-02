@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Hero from "../Components/Hero";
-import Category from "../Components/Category";
+import Hero from "../Components/default/Hero";
+import Category from "../Components/default/Category";
 import Cuisine from "./Cuisine";
 import Home from "./Home";
 import Recipe from "./Recipe";
 import Searched from "./Searched";
-import Footer from "../Components/Footer";
-import ScrollTop from "../Components/ScrollTop";
+import Footer from "../Components/default/Footer";
+import ScrollTop from "../Components/default/ScrollTop";
 
 function Pages() {
   return (

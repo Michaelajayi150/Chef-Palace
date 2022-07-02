@@ -14,7 +14,7 @@ import {
   Series,
   Stats,
 } from "../Styles/RecipeStyle";
-import RecipeSide from "../Components/RecipeSide";
+import RecipeSide from "../Components/recipe/RecipeSide";
 
 function Recipe() {
   const [details, setDetails] = useState([]);
@@ -72,8 +72,6 @@ function Recipe() {
 
     return `${Hours} ${Min}`;
   };
-
-  console.log(recipeLocation);
 
   return (
     <Container>

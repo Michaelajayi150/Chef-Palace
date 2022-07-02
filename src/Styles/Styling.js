@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Card = styled.div`
-  min-height: 25rem;
+  min-height: 20rem;
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
@@ -31,6 +31,12 @@ export const Card = styled.div`
     justify-content: center;
     align-items: center;
     color: #fff;
+  }
+
+  &:hover {
+    p {
+      color: rgb(238, 193, 149);
+    }
   }
 `;
 
@@ -108,6 +114,77 @@ export const SLink = styled(NavLink)`
     svg {
       color: #fff;
       font-size: 1.5rem;
+    }
+  }
+`;
+
+export const ClassicGrid = styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const ClassyCard = styled.div`
+  min-height: 25rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    border-radius: 1.5rem;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  div {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    z-index: 11;
+  }
+
+  h4 {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    width: 112.25px;
+    background-color: #000;
+    padding: 10px;
+  }
+
+  p {
+    position: relative;
+    z-index: 10;
+    width: 95%;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+  }
+
+  &:hover {
+    p {
+      color: #892074;
+    }
+  }
+
+  @media only screen and (min-width: 485px) {
+    h4 {
+      left: 30px;
+    }
+
+    p {
+      left: 30px;
+      width: 80%;
     }
   }
 `;

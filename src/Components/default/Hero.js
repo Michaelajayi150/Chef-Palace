@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import HeroNavbar from "./Navbar";
-import Bg from "../asset/Home.jpg";
-import Bg2 from "../asset/Home-2.jpg";
-import Bg3 from "../asset/Home-3.jpg";
-import Bg4 from "../asset/Home-4.jpg";
-import Bg5 from "../asset/Home-5.jpg";
+import Bg from "../../asset/Home.jpg";
+import Bg2 from "../../asset/Home-2.jpg";
+import Bg3 from "../../asset/Home-3.jpg";
+import Bg4 from "../../asset/Home-4.jpg";
+import Bg5 from "../../asset/Home-5.jpg";
 import Search from "./Search";
 import {
   HeroImage,
@@ -15,7 +15,7 @@ import {
   NextArrow,
   PrevArrow,
   SliderButtons,
-} from "../Styles/HeroStyle";
+} from "../../Styles/HeroStyle";
 
 function Hero() {
   const background = [

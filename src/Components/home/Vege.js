@@ -1,37 +1,37 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
-import { Card, Gradient } from "../Styles/Styling";
-import "@splidejs/splide/dist/css/splide.min.css";
-import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Card, Gradient } from "../../Styles/Styling";
+// import axios from "axios";
 
-function Popular() {
-  const [Popular, setPopular] = useState([]);
+function Vege() {
+  const [Veggie, setVeggie] = useState([]);
   useEffect(() => {
-    getPopular();
+    getVeggie();
   }, []);
 
-  const getPopular = async () => {
-    const check = localStorage.getItem("Popular");
+  const getVeggie = async () => {
+    const check = localStorage.getItem("Veggie");
 
     if (check) {
-      setPopular(JSON.parse(check));
+      setVeggie(JSON.parse(check));
     } else {
       let appID = "23b20659";
 
       const api = await fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=${appID}&app_key=${process.env.REACT_APP_API_KEY}&random=true`
+        `https://api.edamam.com/api/recipes/v2?type=public&q=salad&q=bread&app_id=${appID}&app_key=${process.env.REACT_APP_API_KEY}&health=vegan&random=true`
       );
       const data = await api.json();
 
-      localStorage.setItem("Popular", JSON.stringify(data.hits));
-      setPopular(data.hits);
+      localStorage.setItem("Veggie", JSON.stringify(data.hits));
+      setVeggie(data.hits);
     }
   };
 
   return (
-    <Container className="mt-5">
-      <h2> Popular Recipes </h2>
+    <Container>
+      <h2> Veggie Recipes </h2>
 
       {/* Slide Container */}
       <Splide
@@ -51,10 +51,10 @@ function Popular() {
           arrows: false,
           pagination: false,
           drag: "free",
-          gap: "1rem",
+          gap: "20px",
         }}
       >
-        {Popular.map((item, index) => {
+        {Veggie.map((item, index) => {
           return (
             <SplideSlide key={index} className="mt-3">
               <Card>
@@ -77,4 +77,4 @@ function Popular() {
   );
 }
 
-export default Popular;
+export default Vege;

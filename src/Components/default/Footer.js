@@ -7,7 +7,7 @@ import {
   FooterFlex,
   FooterShare,
   GoTop,
-} from "../Styles/FooterStyle";
+} from "../../Styles/FooterStyle";
 
 const ScrollToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

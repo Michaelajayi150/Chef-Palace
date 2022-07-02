@@ -4,7 +4,7 @@ import {
   DishType,
   HealthType,
   MealType,
-} from "../Components/DataList";
+} from "./DataList";
 
 function FilterTab({ option, handleVal }) {
   const Specs = [
