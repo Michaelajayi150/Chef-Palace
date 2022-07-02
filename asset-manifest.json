@@ -1,18 +1,23 @@
 {
   "files": {
-    "main.css": "/Chef-Palace/static/css/main.e5cd66a3.css",
-    "main.js": "/Chef-Palace/static/js/main.39f10875.js",
-    "static/media/Home-3.jpg": "/Chef-Palace/static/media/Home-3.733fb395e471c892d71b.jpg",
-    "static/media/Home-5.jpg": "/Chef-Palace/static/media/Home-5.d647c2f84edbaef5245b.jpg",
-    "static/media/Home-2.jpg": "/Chef-Palace/static/media/Home-2.6ef6db913df93a631506.jpg",
-    "static/media/Home-4.jpg": "/Chef-Palace/static/media/Home-4.f7506bae6d36fa2721e2.jpg",
+    "main.css": "/Chef-Palace/static/css/main.4d0c2602.css",
+    "main.js": "/Chef-Palace/static/js/main.d51d33fb.js",
+    "static/media/Home-3.jpg": "/Chef-Palace/static/media/Home-3.3f509288de3b05f488d1.jpg",
+    "static/media/Home-5.jpg": "/Chef-Palace/static/media/Home-5.5b4ce3ee8d25c21bfce2.jpg",
     "static/media/Home.jpg": "/Chef-Palace/static/media/Home.3887db3ba88c132b5b6c.jpg",
+    "static/media/Showcase-4.jpg": "/Chef-Palace/static/media/Showcase-4.93d8a627c32658f4a36e.jpg",
+    "static/media/Showcase.jpg": "/Chef-Palace/static/media/Showcase.841cca6f14166c771fb1.jpg",
+    "static/media/Showcase-2.jpg": "/Chef-Palace/static/media/Showcase-2.979c573b978cca44eab4.jpg",
+    "static/media/Showcase-3.jpg": "/Chef-Palace/static/media/Showcase-3.08a4aaccf1c552e84374.jpg",
+    "static/media/error.png": "/Chef-Palace/static/media/error.db2b18d1557e7eb718a2.png",
+    "static/media/Home-2.jpg": "/Chef-Palace/static/media/Home-2.bc8fb119583cd246e493.jpg",
+    "static/media/Home-4.jpg": "/Chef-Palace/static/media/Home-4.c4a79b2599c99f16ff50.jpg",
     "index.html": "/Chef-Palace/index.html",
-    "main.e5cd66a3.css.map": "/Chef-Palace/static/css/main.e5cd66a3.css.map",
-    "main.39f10875.js.map": "/Chef-Palace/static/js/main.39f10875.js.map"
+    "main.4d0c2602.css.map": "/Chef-Palace/static/css/main.4d0c2602.css.map",
+    "main.d51d33fb.js.map": "/Chef-Palace/static/js/main.d51d33fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5cd66a3.css",
-    "static/js/main.39f10875.js"
+    "static/css/main.4d0c2602.css",
+    "static/js/main.d51d33fb.js"
   ]
 }
