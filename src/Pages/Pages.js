@@ -7,11 +7,13 @@ import Recipe from "./Recipe";
 import Searched from "./Searched";
 import Footer from "../Components/default/Footer";
 import ScrollTop from "../Components/default/ScrollTop";
+import Sign from "./Sign";
 
 function Pages() {
   return (
     <BrowserRouter basename="/Chef-Palace">
       <ScrollTop />
+      {/* <Sign /> */}
       <Hero />
       <Category />
       <Routes>

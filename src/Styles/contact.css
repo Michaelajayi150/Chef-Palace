@@ -55,7 +55,7 @@
 }
 
 .form-btn:hover {
-  background-color: #fff;
+  background-color: transparent;
   color: rgb(205, 133, 63);
 }
 
