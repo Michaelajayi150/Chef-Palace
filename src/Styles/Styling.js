@@ -57,17 +57,18 @@ export const Grid = styled.div`
 
 export const List = styled.div`
   position: relative;
-  /* width: calc(50% - 600px); */
+  width: 90%;
   margin: 6px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   transform: translateY(-60px);
-  /* background-color: #fff; */
   z-index: 10;
-  padding: 10px 30px;
-  border-radius: 10px;
-  /* box-shadow: 2px 4px 18px 20px rgb(0, 0, 0, 0.4); */
+
+  @media only screen and (min-width: 440px) {
+    justify-content: center;
+    transform: translateY(-70px);
+  }
 `;
 
 export const SLink = styled(NavLink)`
@@ -79,21 +80,19 @@ export const SLink = styled(NavLink)`
   text-decoration: none;
   background: linear-gradient(35deg, #494949, #313131);
   width: 90px;
-  height: 90px;
-  /* padding: 15px 15px; */
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
+  height: 65px;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
   cursor: pointer;
-  transform: scale(0.8);
 
   h4 {
     color: #fff;
-    font-size: 0.8rem;
+    font-size: calc(0.8rem * 0.8);
   }
 
   svg {
     color: #fff;
-    font-size: 1rem;
+    font-size: calc(1rem * 0.8);
   }
 
   &.active {
@@ -106,14 +105,9 @@ export const SLink = styled(NavLink)`
     margin-right: 1rem;
     margin-left: 1rem;
 
-    h4 {
-      color: #fff;
-      font-size: 0.8rem;
-    }
-
     svg {
       color: #fff;
-      font-size: 1.5rem;
+      font-size: calc(1.5rem * 0.8);
     }
   }
 `;
@@ -154,6 +148,7 @@ export const ClassyCard = styled.div`
     position: relative;
     z-index: 10;
     color: #fff;
+    font-size: 1.2rem;
     width: 112.25px;
     background-color: #000;
     padding: 10px;
@@ -164,7 +159,7 @@ export const ClassyCard = styled.div`
     z-index: 10;
     width: 95%;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     padding: 10px;
     background: #fff;
@@ -180,9 +175,11 @@ export const ClassyCard = styled.div`
   @media only screen and (min-width: 485px) {
     h4 {
       left: 30px;
+      font-size: calc(1.275rem + 0.3vw);
     }
 
     p {
+      font-size: 1.6rem;
       left: 30px;
       width: 80%;
     }

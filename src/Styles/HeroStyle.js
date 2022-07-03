@@ -13,10 +13,11 @@ export const HeroWrapper = styled.div`
 `;
 
 export const HeroSection = styled.div`
-  height: 70vh;
-  max-height: 900px;
+  height: 90vh;
+  max-height: 800px;
   overflow: hidden;
   position: relative;
+  margin-bottom: 20px;
 `;
 
 export const HeroSlide = styled.div`

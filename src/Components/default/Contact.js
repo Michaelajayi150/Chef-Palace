@@ -89,7 +89,7 @@ function Contact() {
             <h2 className="section-topic">
               Want to Contribute to the Cooking Family?
             </h2>
-            <h3 className="section-topic">We'd love to hear from you</h3>
+            <h3 className="section-topic">Send us a message</h3>
           </hgroup>
 
           <form className="contact-form" onSubmit={handleSubmit}>
