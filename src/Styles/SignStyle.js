@@ -56,6 +56,11 @@ export const LogBox = styled.div`
       }
     }
   }
+
+  p {
+    position: relative;
+    z-index: 1100;
+  }
 `;
 
 export const LogAnimation = styled.div`

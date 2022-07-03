@@ -17,7 +17,7 @@ import {
   SliderButtons,
 } from "../../Styles/HeroStyle";
 
-function Hero() {
+function Hero({ ModalStat }) {
   const background = [
     { image: Bg, label: "Home Page" },
     { image: Bg2, label: "Home Page 2" },
@@ -63,7 +63,7 @@ function Hero() {
 
   return (
     <HeroSection>
-      <HeroNavbar />
+      <HeroNavbar popModal={ModalStat} />
       <HeroWrapper>
         <Search classType="hero-search" />
         {background.map((slide, index) => {

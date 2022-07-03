@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function SignUp() {
   return (
     <>
@@ -12,7 +14,9 @@ function SignUp() {
           Sign Up
         </button>
       </form>
-      <p>Have an account already? Login!</p>
+      <p>
+        Have an account already? <Link to="/">Login!</Link>
+      </p>
     </>
   );
 }

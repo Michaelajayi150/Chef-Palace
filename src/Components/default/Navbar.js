@@ -6,7 +6,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 
-function HeroNavbar() {
+function HeroNavbar({ popModal }) {
   const [scrollPos, setScrollPos] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const HandleScroll = () => {
@@ -74,7 +74,7 @@ function HeroNavbar() {
               </Link>
               <Search classType="header-search" />
               <Link
-                onClick={toggle}
+                onClick={popModal}
                 className="nav-link user-btn"
                 to={{ pathname: "/" }}
               >

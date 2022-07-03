@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function SignIn() {
   return (
     <>
@@ -10,8 +12,12 @@ function SignIn() {
           Login
         </button>
       </form>
-      <p>Forgot Password?</p>
-      <p>New? Create new account!</p>
+      <p>
+        <Link to="/reset">Forgot Password?</Link>
+      </p>
+      <p>
+        New? <Link to="/signup">Create new account!</Link>
+      </p>
     </>
   );
 }

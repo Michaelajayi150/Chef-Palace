@@ -1,15 +1,21 @@
+import { Link } from "react-router-dom";
+
 function Reset() {
   return (
     <>
-      <h5>
-        Enter Username or Emai you used to open account to be able to reset
+      <h6>
+        Enter Username or Email you used to open account to be able to reset
         password
-      </h5>
-      <input type="email" placeholder="Your Email" required />
-      <button className="form-btn" type="submit" value="submit">
-        Submit
-      </button>
-      <p>Go Back</p>
+      </h6>
+      <form>
+        <input type="email" placeholder="Your Email" required />
+        <button className="form-btn" type="submit" value="submit">
+          Submit
+        </button>
+      </form>
+      <p>
+        <Link to="/">Go Back</Link>
+      </p>
     </>
   );
 }

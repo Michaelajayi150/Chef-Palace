@@ -3,13 +3,24 @@ import * as GiIcons from "react-icons/gi";
 import * as FaIcons from "react-icons/fa";
 import SignIn from "../Components/sign/SignIn";
 import SignUp from "../Components/sign/SignUp";
+import { Route, Routes } from "react-router-dom";
+import Reset from "../Components/sign/Reset";
 
-function Sign() {
+function Sign({ closeModal }) {
   return (
     <>
       <LogContainer>
+        <div
+          style={{
+            position: "relative",
+            zIndex: 10,
+            width: "100%",
+            height: "100%",
+          }}
+          onClick={closeModal}
+        ></div>
         <LogBox>
-          <div className="close">
+          <div className="close" onClick={closeModal}>
             <FaIcons.FaTimes />
           </div>
           <h5>
@@ -23,8 +34,11 @@ function Sign() {
             LACE
           </h2>
 
-          {/* <SignIn /> */}
-          <SignUp />
+          <Routes>
+            <Route path="/" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/reset" element={<Reset />} />
+          </Routes>
 
           <LogAnimation>
             <div className="circle xxlarge shade1"></div>
