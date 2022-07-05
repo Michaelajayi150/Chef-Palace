@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { NavLinks } from "../../Styles/SignStyle";
 
-function SignUp() {
+function SignUp({ handleChange }) {
   return (
     <>
       <h5>Create an account with Chef Palace today</h5>
@@ -15,7 +15,8 @@ function SignUp() {
         </button>
       </form>
       <p>
-        Have an account already? <Link to="/">Login!</Link>
+        Have an account already?{" "}
+        <NavLinks onClick={() => handleChange("/signin")}>Login!</NavLinks>
       </p>
     </>
   );

@@ -29,17 +29,8 @@ function AllCategory() {
   };
 
   useEffect(() => {
-    const getSearched = async (name) => {
-      const data = await fetch(
-        `https://api.edamam.com/search?q=${name}&app_id=${appId}&app_key=${process.env.REACT_APP_API_KEY}&from=0&to=100`
-      );
-
-      const recipes = await data.json();
-      setCategory(recipes.hits);
-    };
-
-    getSearched(params.search);
-  }, [params.search, appId]);
+    filterSearch(params.search, option);
+  });
 
   const handleFilter = () => {
     filterSearch(params.search, option);

@@ -3,12 +3,14 @@ import * as BiIcons from "react-icons/bi";
 import * as GiIcons from "react-icons/gi";
 import * as FaIcons from "react-icons/fa";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Search from "./Search";
 
 function HeroNavbar({ popModal }) {
   const [scrollPos, setScrollPos] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const lock = useLocation();
+
   const HandleScroll = () => {
     const pos = window.pageYOffset;
     setScrollPos(pos);
@@ -76,7 +78,7 @@ function HeroNavbar({ popModal }) {
               <Link
                 onClick={popModal}
                 className="nav-link user-btn"
-                to={{ pathname: "/" }}
+                to={`${lock.pathname}`}
               >
                 <BiIcons.BiUser size="1.4rem" />
               </Link>

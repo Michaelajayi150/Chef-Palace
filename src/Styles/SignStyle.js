@@ -1,4 +1,21 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+export const breakpoint = (values = []) => {
+  const breakpointProps = values.reduce((mediaQueries, value) => {
+    const [screenBreakpoint, cssPropBreakpoint] = [
+      Object.keys(value)[0],
+      Object.values(value)[0],
+    ];
+    return (mediaQueries += `@media screen and (min-width: ${screenBreakpoint}px) {
+      width: ${cssPropBreakpoint}px;
+      height: ${cssPropBreakpoint}px;
+      left: ${-cssPropBreakpoint / 2}px;
+      bottom: ${-cssPropBreakpoint / 2}px;
+    }`);
+  }, "");
+
+  return css([breakpointProps]);
+};
 
 export const LogContainer = styled.div`
   width: 100%;
@@ -7,14 +24,14 @@ export const LogContainer = styled.div`
   background: rgba(0, 0, 0, 0.5);
   z-index: 1001;
 `;
+
 export const LogBox = styled.div`
-  width: 60%;
-  min-width: 300px;
-  min-height: 45rem;
-  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 50%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
   background-color: #fff;
   z-index: 100;
@@ -27,6 +44,7 @@ export const LogBox = styled.div`
 
   .close {
     position: absolute;
+    z-index: 1100;
     cursor: pointer;
     top: 10px;
     right: 20px;
@@ -61,6 +79,16 @@ export const LogBox = styled.div`
     position: relative;
     z-index: 1100;
   }
+
+  @media only screen and (min-width: 441px) {
+    min-height: 35rem;
+    border-radius: 0.5rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 60%;
+    min-height: 45rem;
+  }
 `;
 
 export const LogAnimation = styled.div`
@@ -71,6 +99,7 @@ export const LogAnimation = styled.div`
   overflow: hidden;
   width: 1000px;
   height: 1000px;
+  border-radius: 0.5rem;
 
   .circle {
     position: absolute;
@@ -81,38 +110,47 @@ export const LogAnimation = styled.div`
   }
 
   .small {
-    width: 200px;
-    height: 200px;
-    left: -100px;
-    bottom: -100px;
+    width: 80px;
+    height: 80px;
+    left: -40px;
+    bottom: -40px;
+    ${breakpoint([{ 450: 120 }, { 768: 50 }, { 800: 100 }, { 1200: 200 }])}
   }
 
   .medium {
+    width: 160px;
+    height: 160px;
+    left: -80px;
+    bottom: -80px;
+
+    ${breakpoint([{ 450: 240 }, { 768: 100 }, { 800: 200 }, { 1200: 400 }])}
+  }
+
+  .large {
+    width: 240px;
+    height: 240px;
+    left: -120px;
+    bottom: -120px;
+
+    ${breakpoint([{ 450: 360 }, { 768: 150 }, { 800: 300 }, { 1200: 600 }])}
+  }
+
+  .xlarge {
+    width: 320px;
+    height: 320px;
+    left: -160px;
+    bottom: -160px;
+
+    ${breakpoint([{ 450: 480 }, { 768: 200 }, { 800: 400 }, { 1200: 800 }])}
+  }
+
+  .xxlarge {
     width: 400px;
     height: 400px;
     left: -200px;
     bottom: -200px;
-  }
 
-  .large {
-    width: 600px;
-    height: 600px;
-    left: -300px;
-    bottom: -300px;
-  }
-
-  .xlarge {
-    width: 800px;
-    height: 800px;
-    left: -400px;
-    bottom: -400px;
-  }
-
-  .xxlarge {
-    width: 1000px;
-    height: 1000px;
-    left: -500px;
-    bottom: -500px;
+    ${breakpoint([{ 450: 600 }, { 768: 250 }, { 800: 500 }, { 1200: 1000 }])}
   }
 
   .shade1 {
@@ -141,5 +179,16 @@ export const LogAnimation = styled.div`
     100% {
       transform: scale(0.8);
     }
+  }
+`;
+
+export const NavLinks = styled.a`
+  position: relative;
+  z-index: 1100;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: #892074;
   }
 `;

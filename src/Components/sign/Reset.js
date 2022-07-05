@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { NavLinks } from "../../Styles/SignStyle";
 
-function Reset() {
+function Reset({ handleChange }) {
   return (
     <>
       <h6>
@@ -14,7 +14,7 @@ function Reset() {
         </button>
       </form>
       <p>
-        <Link to="/">Go Back</Link>
+        <NavLinks onClick={() => handleChange("/signin")}>Go Back</NavLinks>
       </p>
     </>
   );

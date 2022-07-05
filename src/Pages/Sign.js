@@ -3,10 +3,15 @@ import * as GiIcons from "react-icons/gi";
 import * as FaIcons from "react-icons/fa";
 import SignIn from "../Components/sign/SignIn";
 import SignUp from "../Components/sign/SignUp";
-import { Route, Routes } from "react-router-dom";
 import Reset from "../Components/sign/Reset";
+import { useState } from "react";
 
 function Sign({ closeModal }) {
+  const [components, setComponents] = useState("/signin");
+
+  const transComponent = (element) => {
+    setComponents(element);
+  };
   return (
     <>
       <LogContainer>
@@ -34,13 +39,15 @@ function Sign({ closeModal }) {
             LACE
           </h2>
 
-          <Routes>
-            <Route path="/" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/reset" element={<Reset />} />
-          </Routes>
+          {components === "/signin" ? (
+            <SignIn handleChange={transComponent} />
+          ) : components === "/signup" ? (
+            <SignUp handleChange={transComponent} />
+          ) : (
+            <Reset handleChange={transComponent} />
+          )}
 
-          <LogAnimation>
+          <LogAnimation sizing="200px">
             <div className="circle xxlarge shade1"></div>
             <div className="circle xlarge shade2"></div>
             <div className="circle large shade3"></div>
