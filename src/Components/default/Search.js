@@ -53,6 +53,7 @@ function Search({ classType }) {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Search for a Recipe"
       />
+      <div className="bg-over"></div>
       {classType === "header-search" ? (
         <button type="submit" className="form-search-submit">
           <GiIcons.GiKnifeFork size="1.1rem" />
@@ -62,7 +63,7 @@ function Search({ classType }) {
           <BsIcons.BsSearch size="1.1rem" />
         </button>
       )}
-      {searchList.length >= 1 && classType === "hero-search" ? (
+      {searchList.length >= 0 && classType === "hero-search" ? (
         <Nav className="search-list">
           {searchList.map((listItem, index) => {
             return (

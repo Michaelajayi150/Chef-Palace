@@ -3,7 +3,6 @@
   "name": "chef-palace",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://api.edamam.com",
   "dependencies": {
     "@formspree/react": "^2.2.5",
     "@splidejs/react-splide": "^0.7.5",

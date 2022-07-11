@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import * as BiIcons from "react-icons/bi";
 import * as GiIcons from "react-icons/gi";
-import * as FaIcons from "react-icons/fa";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import Search from "./Search";
+// import Search from "./Search";
 
 function HeroNavbar({ popModal }) {
   const [scrollPos, setScrollPos] = useState(0);
@@ -39,51 +38,34 @@ function HeroNavbar({ popModal }) {
               LACE
             </h1>
           </Link>
-          <div className="navbar-toggler">
-            {isOpen ? (
-              <GiIcons.GiKnifeFork onClick={toggle} size="1.5rem" />
-            ) : (
-              <FaIcons.FaHamburger onClick={toggle} size="1.5rem" />
-            )}
-          </div>
-          <Navbar.Collapse
-            id="responsive-navbar-nav"
-            className={
-              !isOpen ? "justify-content-end" : "justify-content-end show"
-            }
-          >
+          <Navbar className="justify-content-end">
             <Nav className="me-2">
               <Link
                 onClick={toggle}
-                className="nav-link"
-                to={{ pathname: "/searched/chicken" }}
-              >
-                Recipes
-              </Link>
-              <Link
-                onClick={toggle}
-                className="nav-link"
+                className="nav-link links"
                 to={{ pathname: "/" }}
               >
-                About Us
+                <BiIcons.BiHomeSmile size="1.4rem" />
+                <span class="links-tag">Home</span>
               </Link>
-              <Link
-                onClick={toggle}
-                className="nav-link"
-                to={{ pathname: "/" }}
-              >
-                Blog
-              </Link>
-              <Search classType="header-search" />
               <Link
                 onClick={popModal}
-                className="nav-link user-btn"
+                className="nav-link links"
+                to="/searched/chicken"
+              >
+                <BiIcons.BiSearch size="1.4rem" />
+                <span class="links-tag">Search</span>
+              </Link>
+              <Link
+                onClick={popModal}
+                className="nav-link links"
                 to={`${lock.pathname}`}
               >
                 <BiIcons.BiUser size="1.4rem" />
+                <span class="links-tag">Sign in</span>
               </Link>
             </Nav>
-          </Navbar.Collapse>
+          </Navbar>
         </Container>
       </Navbar>
     </>

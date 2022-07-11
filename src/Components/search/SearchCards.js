@@ -4,7 +4,7 @@ import Pagination from "./Pagination";
 import { SearchedGrid } from "../../Styles/SearchedStyle";
 import { Card, Gradient } from "../../Styles/Styling";
 
-function SearchedCard({ set, gridNumber }) {
+function SearchedCard({ set, gridNumber, bg }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(gridNumber);
 
@@ -28,6 +28,7 @@ function SearchedCard({ set, gridNumber }) {
                   item.recipe.uri.substr(item.recipe.uri.length - 32)
                 }
               >
+                <img src={bg} alt={item.recipe.label} />
                 <img src={item.recipe.image} alt={item.recipe.label} />
                 <p>{item.recipe.label}</p>
                 <Gradient />
