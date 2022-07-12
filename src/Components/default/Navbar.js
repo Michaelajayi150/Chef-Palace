@@ -46,15 +46,11 @@ function HeroNavbar({ popModal }) {
                 to={{ pathname: "/" }}
               >
                 <BiIcons.BiHomeSmile size="1.4rem" />
-                <span class="links-tag">Home</span>
+                <span className="links-tag">Home</span>
               </Link>
-              <Link
-                onClick={popModal}
-                className="nav-link links"
-                to="/searched/chicken"
-              >
+              <Link className="nav-link links" to="/searched/chicken">
                 <BiIcons.BiSearch size="1.4rem" />
-                <span class="links-tag">Search</span>
+                <span className="links-tag">Search</span>
               </Link>
               <Link
                 onClick={popModal}
@@ -62,7 +58,7 @@ function HeroNavbar({ popModal }) {
                 to={`${lock.pathname}`}
               >
                 <BiIcons.BiUser size="1.4rem" />
-                <span class="links-tag">Sign in</span>
+                <span className="links-tag">Sign in</span>
               </Link>
             </Nav>
           </Navbar>

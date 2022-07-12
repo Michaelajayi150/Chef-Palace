@@ -4,8 +4,8 @@ function Reset({ handleChange }) {
   return (
     <>
       <h6>
-        Enter Username or Email you used to open account to be able to reset
-        password
+        To reset password <br />
+        Enter Username or Email you used to open account
       </h6>
       <form>
         <input type="email" placeholder="Your Email" required />

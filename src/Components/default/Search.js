@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import "../../Styles/search.css";
 import { Link, useNavigate } from "react-router-dom";
-import * as GiIcons from "react-icons/gi";
 import * as BsIcons from "react-icons/bs";
 import { Nav } from "react-bootstrap";
 
-function Search({ classType }) {
+function Search() {
   const [input, setInput] = useState("");
   const [searchList, setSearchList] = useState([]);
+  const [searching, setSearching] = useState(false);
   const navigate = useNavigate();
   const inputTab = useRef();
 
@@ -28,6 +28,11 @@ function Search({ classType }) {
     }, 1000);
   };
 
+  const toggle = () => {
+    setSearching(!searching);
+    setInput("");
+  };
+
   const getList = async (input) => {
     let appID = "23b20659";
 
@@ -44,7 +49,11 @@ function Search({ classType }) {
   }, [input]);
 
   return (
-    <form className={classType} onSubmit={handleSubmit}>
+    <form
+      className={searching ? "searching" : ""}
+      onClick={toggle}
+      onSubmit={handleSubmit}
+    >
       <input
         type="text"
         value={input}
@@ -54,16 +63,10 @@ function Search({ classType }) {
         placeholder="Search for a Recipe"
       />
       <div className="bg-over"></div>
-      {classType === "header-search" ? (
-        <button type="submit" className="form-search-submit">
-          <GiIcons.GiKnifeFork size="1.1rem" />
-        </button>
-      ) : (
-        <button type="submit" className="form-search-submit">
-          <BsIcons.BsSearch size="1.1rem" />
-        </button>
-      )}
-      {searchList.length >= 0 && classType === "hero-search" ? (
+      <button type="submit" className="form-search-submit">
+        <BsIcons.BsSearch size="1.1rem" />
+      </button>
+      {searchList.length >= 0 ? (
         <Nav className="search-list">
           {searchList.map((listItem, index) => {
             return (
