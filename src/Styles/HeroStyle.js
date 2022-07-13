@@ -1,22 +1,13 @@
 import styled from "styled-components";
 import { css } from "styled-components";
 import * as IoIcons from "react-icons/io5";
-
-export const HeroWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-`;
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 export const HeroSection = styled.div`
   height: 50vh;
   max-height: 600px;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   margin-bottom: 20px;
 
   @media screen and (min-width: 768px) {
@@ -25,16 +16,24 @@ export const HeroSection = styled.div`
   }
 `;
 
-export const HeroSlide = styled.div`
+export const HeroWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+`;
+
+export const HeroSlide = styled(Splide)`
   z-index: 1;
   width: 100%;
   height: 100%;
 `;
 
-export const HeroSlider = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+export const HeroSlider = styled(SplideSlide)`
+  overflow: hidden;
   width: 100%;
   height: 100%;
   display: flex;
@@ -61,9 +60,6 @@ export const HeroSlider = styled.div`
 `;
 
 export const HeroImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -116,11 +112,14 @@ export const Arrows = css`
     margin-right: 1rem;
     user-select: none;
     transition: 0.3s;
+    position: static;
+    top: 0;
+    transform: translateY(0);
 
-    &:hover {
+    /* &:hover {
       background: #cd853f;
       transform: scale(1.05);
-    }
+    } */
   }
 `;
 

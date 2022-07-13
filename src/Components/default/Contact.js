@@ -14,20 +14,6 @@ function Contact() {
   });
   const [Status, setStatus] = useState(false);
   const [state, handleSubmit] = useForm("xknykedo");
-  const sectionVariants = {
-    offscreen: {
-      opacity: 0.1,
-      visibility: "hidden",
-    },
-    onscreen: {
-      opacity: 1,
-      visibility: "visible",
-      transition: {
-        type: "spring",
-        duration: 2,
-      },
-    },
-  };
 
   const PopModal = {
     offscreen: {
@@ -75,15 +61,9 @@ function Contact() {
   };
 
   return (
-    <motion.div
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.7 }}
-      id="contact"
-      className="contact-section"
-    >
+    <div id="contact" className="contact-section">
       <Container>
-        <motion.div variants={sectionVariants} className="contact-container">
+        <div className="contact-container">
           <hgroup className="text-content-header">
             <h3 className="section-topic">Contact Us</h3>
             <h2 className="section-topic">
@@ -168,7 +148,7 @@ function Contact() {
               Send Message
             </button>
           </form>
-        </motion.div>
+        </div>
         <motion.div initial="offscreen" animate={Status ? "popIn" : "popOut"}>
           <motion.div variants={PopModal} className="pop-modal">
             <span>
@@ -178,7 +158,7 @@ function Contact() {
           </motion.div>
         </motion.div>
       </Container>
-    </motion.div>
+    </div>
   );
 }
 

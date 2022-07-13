@@ -50,7 +50,7 @@ function Search() {
 
   return (
     <form
-      className={searching ? "searching" : ""}
+      className={searching ? "hero-search searching" : "hero-search"}
       onClick={toggle}
       onSubmit={handleSubmit}
     >
