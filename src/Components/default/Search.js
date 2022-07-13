@@ -30,7 +30,10 @@ function Search() {
 
   const toggle = () => {
     setSearching(!searching);
-    setInput("");
+
+    setTimeout(() => {
+      setInput("");
+    }, 1000);
   };
 
   const getList = async (input) => {

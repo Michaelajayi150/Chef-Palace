@@ -109,7 +109,7 @@ input.border {
 }
 
 @media only screen and (min-width: 540px) {
-  input, .searching .search-list, .searching input {
+  .hero-search input, .searching .search-list, .searching input {
     width: calc(100vw - 150px);
   }
   
@@ -119,7 +119,7 @@ input.border {
 }
 
 @media only screen and (min-width: 768px) {
-  input, .searching .search-list, .searching input {
+  .hero-search input, .searching .search-list, .searching input {
     width: calc(100vw - 200px);
   }
   

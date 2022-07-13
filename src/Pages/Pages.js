@@ -9,7 +9,6 @@ import Footer from "../Components/default/Footer";
 import ScrollTop from "../Components/default/ScrollTop";
 import Sign from "./Sign";
 import { useState } from "react";
-import { background } from "../Components/default/SliderData";
 
 function Pages() {
   // const [isLogged, setIsLogged] = useState(false);
@@ -23,7 +22,7 @@ function Pages() {
     <BrowserRouter basename="/Chef-Palace">
       <ScrollTop />
       {modal ? <Sign closeModal={Modal} /> : null}
-      <Hero ModalStat={Modal} background={background} />
+      <Hero ModalStat={Modal} />
       <Category />
       <Routes>
         <Route exact path="/" element={<Home />} />

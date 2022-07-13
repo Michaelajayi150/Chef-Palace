@@ -13,6 +13,7 @@ function SearchedCard({ set, gridNumber, bg }) {
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
 
   const paginate = (pageNumber) => {
+    window.scrollTo({ top: 350, left: 0, behavior: "smooth" });
     setCurrentPage(pageNumber);
   };
   const currentCards = set.slice(indexOfFirstCard, indexOfLastCard);

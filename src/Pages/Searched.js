@@ -36,6 +36,7 @@ function AllCategory() {
 
   // Get Search Request
   useEffect(() => {
+    setCategory([]);
     const Search = async (name) => {
       try {
         // Fetch Data
