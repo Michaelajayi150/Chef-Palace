@@ -9,6 +9,7 @@ import {
   HeroWrapper,
   NextArrow,
   PrevArrow,
+  RecentSearch,
   SliderButtons,
 } from "../../Styles/HeroStyle";
 import { SplideTrack } from "@splidejs/react-splide";
@@ -17,8 +18,9 @@ import Bg2 from "../../asset/Home-2.jpg";
 import Bg3 from "../../asset/Home-3.jpg";
 import Bg4 from "../../asset/Home-4.jpg";
 import Bg5 from "../../asset/Home-5.jpg";
+import { Link } from "react-router-dom";
 
-function Hero({ ModalStat }) {
+function Hero() {
   const background = [
     { image: Bg, label: "Home Page" },
     { image: Bg2, label: "Home Page 2" },
@@ -29,9 +31,16 @@ function Hero({ ModalStat }) {
 
   return (
     <HeroSection>
-      <HeroNavbar popModal={ModalStat} />
+      <HeroNavbar />
       <HeroWrapper>
         <Search classType="hero-search" />
+        <RecentSearch>
+          <Link to="/searched/Chicken%20Fries">Chicken Fries</Link>
+          <Link to="/searched/Summer%20Vegetables">Summer Vegetables</Link>
+          <Link to="/searched/Steamed%20Pork">Steamed Pork</Link>
+          <Link to="/searched/Rice">Rice</Link>
+        </RecentSearch>
+
         <HeroSlide
           options={{
             type: "loop",

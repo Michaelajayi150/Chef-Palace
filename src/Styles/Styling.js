@@ -79,7 +79,7 @@ export const SLink = styled(NavLink)`
   border-radius: 50%;
   text-decoration: none;
   background: linear-gradient(35deg, #494949, #313131);
-  width: 90px;
+  width: 70px;
   height: 65px;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
@@ -100,8 +100,8 @@ export const SLink = styled(NavLink)`
   }
 
   @media only screen and (min-width: 540px) {
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     margin-right: 1rem;
     margin-left: 1rem;
 

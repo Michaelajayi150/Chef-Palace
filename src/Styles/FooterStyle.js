@@ -22,6 +22,10 @@ export const FooterContainer = styled.div`
   .container {
     top: 0;
   }
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const GoTop = styled.div`

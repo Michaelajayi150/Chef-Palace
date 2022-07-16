@@ -112,9 +112,6 @@ function Recipe() {
                   <b>Serves: {details.yield}</b>
                 </div>
                 <RecipeShare>
-                  <a href="paol">
-                    <BsIcons.BsHeartFill size="1.4rem" />
-                  </a>
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=https://michaelajayi150.github.io/Chef-Palace/${recipeLocation.pathname}`}
                     target="_blank"

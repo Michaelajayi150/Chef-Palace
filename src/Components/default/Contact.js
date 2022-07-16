@@ -57,7 +57,6 @@ function Contact() {
 
   const handleChange = (inputSpec) => (e) => {
     setForm({ ...Form, [inputSpec]: e.target.value });
-    console.log(state.errors);
   };
 
   return (
@@ -66,10 +65,7 @@ function Contact() {
         <div className="contact-container">
           <hgroup className="text-content-header">
             <h3 className="section-topic">Contact Us</h3>
-            <h2 className="section-topic">
-              Want to Contribute to the Cooking Family?
-            </h2>
-            <h3 className="section-topic">Send us a message</h3>
+            <h3 className="section-topic">Join the family!!</h3>
           </hgroup>
 
           <form className="contact-form" onSubmit={handleSubmit}>

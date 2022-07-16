@@ -11,6 +11,7 @@ function AllCategory() {
   const preloader = useMemo(() => {
     return new Array(12);
   }, []);
+
   const [category, setCategory] = useState([]);
 
   const [errorState, setErrorState] = useState(false);

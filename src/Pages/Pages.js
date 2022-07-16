@@ -7,22 +7,12 @@ import Recipe from "./Recipe";
 import Searched from "./Searched";
 import Footer from "../Components/default/Footer";
 import ScrollTop from "../Components/default/ScrollTop";
-import Sign from "./Sign";
-import { useState } from "react";
 
 function Pages() {
-  // const [isLogged, setIsLogged] = useState(false);
-  const [modal, setmodal] = useState(false);
-
-  const Modal = () => {
-    setmodal(!modal);
-  };
-
   return (
     <BrowserRouter basename="/Chef-Palace">
       <ScrollTop />
-      {modal ? <Sign closeModal={Modal} /> : null}
-      <Hero ModalStat={Modal} />
+      <Hero />
       <Category />
       <Routes>
         <Route exact path="/" element={<Home />} />

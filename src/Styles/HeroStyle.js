@@ -4,7 +4,7 @@ import * as IoIcons from "react-icons/io5";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 export const HeroSection = styled.div`
-  height: 50vh;
+  height: 70vh;
   max-height: 600px;
   position: relative;
   overflow: hidden;
@@ -128,4 +128,31 @@ export const PrevArrow = styled(IoIcons.IoArrowBack)`
 `;
 export const NextArrow = styled(IoIcons.IoArrowForward)`
   ${Arrows}
+`;
+
+export const RecentSearch = styled.div`
+  position: absolute;
+  top: 60%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 10px;
+  z-index: 10;
+  margin: auto;
+
+  a {
+    color: #fff;
+    padding: 5px 20px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: rgb(205, 133, 63);
+  }
+
+  @media only screen and (min-width: 500px) {
+    display: flex;
+    transform: translateY(-60%);
+    font-size: 13px;
+  }
 `;

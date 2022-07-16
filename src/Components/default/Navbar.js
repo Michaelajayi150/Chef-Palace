@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import * as BiIcons from "react-icons/bi";
 import * as GiIcons from "react-icons/gi";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
-// import Search from "./Search";
+import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-function HeroNavbar({ popModal }) {
+function HeroNavbar() {
   const [scrollPos, setScrollPos] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  const lock = useLocation();
 
   const HandleScroll = () => {
     const pos = window.pageYOffset;
@@ -17,8 +14,8 @@ function HeroNavbar({ popModal }) {
 
   window.addEventListener("scroll", HandleScroll);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
@@ -29,40 +26,38 @@ function HeroNavbar({ popModal }) {
         expand="lg"
         variant="dark"
       >
-        <Container>
-          <Link className="navbar-brand" to={{ pathname: "/", hash: "" }}>
-            <h1>
-              {/* <SiIcons.SiChef size="3rem" /> */}
+        <div className="nav-container">
+          <Link
+            onClick={scrollTop}
+            className="navbar-brand"
+            to={{ pathname: "/", hash: "" }}
+          >
+            <h2>
               CHEF P
-              <GiIcons.GiKnifeFork style={{ transform: "translateY(2.5px)" }} />
+              <GiIcons.GiKnifeFork style={{ transform: "translateY(0px)" }} />
               LACE
-            </h1>
+            </h2>
           </Link>
+
           <Navbar className="justify-content-end">
-            <Nav className="me-2">
-              <Link
-                onClick={toggle}
-                className="nav-link links"
-                to={{ pathname: "/" }}
-              >
-                <BiIcons.BiHomeSmile size="1.4rem" />
+            <Nav>
+              <Link onClick={scrollTop} className="nav-link links" to="/">
+                <BiIcons.BiHomeSmile
+                  size="1.4rem"
+                  style={{ transform: "translateY(-3px)" }}
+                />
                 <span className="links-tag">Home</span>
               </Link>
               <Link className="nav-link links" to="/searched/chicken">
                 <BiIcons.BiSearch size="1.4rem" />
                 <span className="links-tag">Search</span>
               </Link>
-              <Link
-                onClick={popModal}
-                className="nav-link links"
-                to={`${lock.pathname}`}
-              >
-                <BiIcons.BiUser size="1.4rem" />
-                <span className="links-tag">Sign in</span>
+              <Link className="add-on" to="/">
+                <span className="links-tag">Support Us</span>
               </Link>
             </Nav>
           </Navbar>
-        </Container>
+        </div>
       </Navbar>
     </>
   );
